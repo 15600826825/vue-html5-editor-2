@@ -1,7 +1,7 @@
 <style lang="less" src="./style.less"></style>
 <template>
     <div class="vue-html5-editor" :style="{'z-index':zIndex}" :class="{'full-screen':fullScreen}">
-        <div class="toolbar" :style="{'z-index':zIndex+1}" v-el:toolbar>
+        <div class="toolbar" :style="{'z-index':zIndex+1}" ref:toolbar>
             <ul>
                 <template v-for="module in modules">
                     <li v-if="module.show" :title="locale[module.i18n]"
@@ -14,7 +14,7 @@
                 <div v-if="dashboard" :is="dashboard" keep-alive></div>
             </div>
         </div>
-        <div class="content" v-el:content contenteditable="true" @click="toggleDashboard(dashboard)"
+        <div class="content" ref:content contenteditable="true" @click="toggleDashboard(dashboard)"
              :style="contentStyle">
         </div>
     </div>
