@@ -55,9 +55,9 @@
         },
         watch: {
             content(val) {
-                let content = this.$els.content.innerHTML
+                let content = this.$refs.content.innerHTML
                 if (val != content) {
-                    this.$els.content.innerHTML = val
+                    this.$refs.content.innerHTML = val
                 }
             },
             dashboard(val){
@@ -88,7 +88,7 @@
             contentStyle(){
                 let style = {}
                 if (this.fullScreen) {
-                    style.height = window.innerHeight - (this.$els.toolbar.clientHeight + 1) + "px"
+                    style.height = window.innerHeight - (this.$refs.toolbar.clientHeight + 1) + "px"
                     return style
                 }
                 if (!this.autoHeight) {
@@ -101,10 +101,10 @@
         },
         methods: {
             computeDashboardStyle(){
-                this.dashboardStyle = {'max-height': this.$els.content.clientHeight + 'px'}
+                this.dashboardStyle = {'max-height': this.$refs.content.clientHeight + 'px'}
             },
             getContentElement(){
-                return this.$els.content
+                return this.$refs.content
             },
             toggleFullScreen(){
                 this.fullScreen = !this.fullScreen
@@ -115,7 +115,7 @@
             execCommand(command, arg){
                 this.restoreSelection()
                 document.execCommand(command, false, arg)
-                this.content = this.$els.content.innerHTML
+                this.content = this.$refs.content.innerHTML
                 this.dashboard = null
             },
             getCurrentRange(){
@@ -127,8 +127,8 @@
                 if (!range) {
                     return
                 }
-                if (this.$els.content.contains(range.startContainer) &&
-                        this.$els.content.contains(range.endContainer)) {
+                if (this.$refs.content.contains(range.startContainer) &&
+                        this.$refs.content.contains(range.endContainer)) {
                     this.range = range
                 }
             },
@@ -138,7 +138,7 @@
                 if (this.range) {
                     selection.addRange(this.range)
                 } else {
-                    let content = this.$els.content
+                    let content = this.$refs.content
                     let div = document.createElement("div")
                     let range = document.createRange()
                     content.appendChild(div)
@@ -167,17 +167,17 @@
         },
         ready(){
             let component = this
-            let content = component.$els.content
+            let content = component.$refs.content
             content.innerHTML = component.content
             content.addEventListener("mouseup", component.saveCurrentRange, false)
             content.addEventListener("keyup", component.saveCurrentRange, false)
             content.addEventListener("mouseout", component.saveCurrentRange, false)
             content.addEventListener("keyup", function () {
-                component.content = component.$els.content.innerHTML
+                component.content = component.$refs.content.innerHTML
             }, false)
 
             component.touchHandler = function (e) {
-                if (component.$els.content.contains(e.target)) {
+                if (component.$refs.content.contains(e.target)) {
                     component.saveCurrentRange()
                 }
             }
