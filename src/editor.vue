@@ -11,7 +11,9 @@
                 </template>
             </ul>
             <div class="dashboard" v-show="dashboard" :style="dashboardStyle">
-                <div v-if="dashboard" :is="dashboard" keep-alive></div>
+                <keep-alive>
+                    <div v-if="dashboard" :is="dashboard"></div>
+                </keep-alive>
             </div>
         </div>
         <div class="content" ref:content contenteditable="true" @click="toggleDashboard(dashboard)"
@@ -23,8 +25,6 @@
     export default {
         props: {
             content: {
-                //no longer be required
-                //twoWay: true,
                 type: String,
                 required: true,
                 default: ""
@@ -157,15 +157,7 @@
                 }
             }
         },
-        compiled(){
-            let editor = this
-            editor.modules.forEach(function (module) {
-                if (typeof module.init == "function") {
-                    module.init(editor)
-                }
-            })
-        },
-        ready(){
+        mounted: function () {
             let component = this
             let content = component.$refs.content
             content.innerHTML = component.content
@@ -183,6 +175,15 @@
             }
 
             window.addEventListener("touchend", component.touchHandler, false)
+
+            this.$nextTick(function () {
+                let editor = this
+                editor.modules.forEach(function (module) {
+                    if (typeof module.init == "function") {
+                        module.init(editor)
+                    }
+                })
+            })
         },
         beforeDestroy(){
             let editor = this

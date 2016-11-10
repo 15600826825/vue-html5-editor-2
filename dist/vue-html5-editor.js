@@ -1,5 +1,5 @@
 /*!
- * Vue-html5-editor 0.5.1
+ * Vue-html5-editor 0.5.4
  * https://github.com/PeakTai/vue-html5-editor
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -710,30 +710,48 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* styles */
 	__webpack_require__(37)
-	__vue_script__ = __webpack_require__(41)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/editor.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(42)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+
+	/* script */
+	__vue_exports__ = __webpack_require__(41)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(42)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
 	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/Rylan/Desktop/html/src/editor.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/peak/workspace/vue-html5-editor/src/editor.vue"
+	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
+	    hotAPI.createRecord("data-v-88ae7eb8", __vue_options__)
 	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
+	    hotAPI.reload("data-v-88ae7eb8", __vue_options__)
 	  }
 	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] editor.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
 
 /***/ },
 /* 37 */
@@ -751,8 +769,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js!./../node_modules/less-loader/index.js!./style.less", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js!./../node_modules/less-loader/index.js!./style.less");
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-88ae7eb8!./../node_modules/less-loader/index.js!./style.less", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-88ae7eb8!./../node_modules/less-loader/index.js!./style.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -770,7 +788,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	// module
-	exports.push([module.id, "/**\n.vue-html5-editor\n    ├──.toolbar\n    |    ├── ul  (menu)\n    |    └── .dashboard\n    └──.content\n*/\n.vue-html5-editor {\n  font-size: 14px;\n  line-height: 1.5;\n  border: 1px solid #ddd;\n  text-align: left;\n  background-color: white;\n  border-radius: .4em;\n  overflow: hidden;\n}\n.vue-html5-editor * {\n  box-sizing: border-box;\n}\n.vue-html5-editor.full-screen {\n  position: fixed !important;\n  top: 0 !important;\n  left: 0 !important;\n  bottom: 0 !important;\n  right: 0 !important;\n  border-radius: 0;\n}\n.vue-html5-editor > .toolbar {\n  background-color: white;\n  position: relative;\n}\n.vue-html5-editor > .toolbar > ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  border-bottom: 1px solid #ddd;\n}\n.vue-html5-editor > .toolbar > ul > li {\n  display: inline-block;\n  cursor: pointer;\n  width: 50px;\n  text-align: center;\n  line-height: 36px;\n}\n.vue-html5-editor > .toolbar > ul > li .icon {\n  height: 16px;\n  width: 16px;\n  display: inline-block;\n}\n.vue-html5-editor > .toolbar .dashboard {\n  border-bottom: 1px solid #ddd;\n  padding: 10px;\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  background-color: white;\n  overflow: auto;\n}\n.vue-html5-editor > .toolbar .dashboard input[type='text'],\n.vue-html5-editor > .toolbar .dashboard input[type='number'],\n.vue-html5-editor > .toolbar .dashboard select {\n  padding: 6px 12px;\n  color: #555;\n  background-color: #fff;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;\n  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;\n}\n.vue-html5-editor > .toolbar .dashboard input[type='text']:focus,\n.vue-html5-editor > .toolbar .dashboard input[type='number']:focus,\n.vue-html5-editor > .toolbar .dashboard select:focus {\n  border-color: #66afe9;\n  outline: 0;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);\n}\n.vue-html5-editor > .toolbar .dashboard input[type='text'][disabled],\n.vue-html5-editor > .toolbar .dashboard input[type='number'][disabled],\n.vue-html5-editor > .toolbar .dashboard select[disabled],\n.vue-html5-editor > .toolbar .dashboard input[type='text'][readonly],\n.vue-html5-editor > .toolbar .dashboard input[type='number'][readonly],\n.vue-html5-editor > .toolbar .dashboard select[readonly] {\n  background-color: #eee;\n  opacity: 1;\n}\n.vue-html5-editor > .toolbar .dashboard input[type='text'][disabled],\n.vue-html5-editor > .toolbar .dashboard input[type='number'][disabled],\n.vue-html5-editor > .toolbar .dashboard select[disabled] {\n  cursor: not-allowed;\n}\n.vue-html5-editor > .toolbar .dashboard button {\n  padding: 6px 12px;\n  white-space: nowrap;\n  vertical-align: middle;\n  cursor: pointer;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  color: #333;\n  background-color: #fff;\n  border-color: #ccc;\n}\n.vue-html5-editor > .toolbar .dashboard button.active,\n.vue-html5-editor > .toolbar .dashboard button:active,\n.vue-html5-editor > .toolbar .dashboard button:focus,\n.vue-html5-editor > .toolbar .dashboard button:hover {\n  color: #333;\n  background-color: #e6e6e6;\n}\n.vue-html5-editor > .toolbar .dashboard button.active,\n.vue-html5-editor > .toolbar .dashboard button:active {\n  border-color: #adadad;\n  outline: 0;\n  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n}\n.vue-html5-editor > .toolbar .dashboard button:focus {\n  border-color: #8c8c8c;\n  text-decoration: none;\n}\n.vue-html5-editor > .toolbar .dashboard button:hover {\n  border-color: #adadad;\n  text-decoration: none;\n}\n.vue-html5-editor > .toolbar .dashboard input,\n.vue-html5-editor > .toolbar .dashboard button,\n.vue-html5-editor > .toolbar .dashboard select {\n  line-height: normal;\n}\n.vue-html5-editor > .toolbar .dashboard label {\n  font-weight: bolder;\n}\n.vue-html5-editor .content {\n  overflow: auto;\n  padding: 10px;\n}\n.vue-html5-editor .content:focus {\n  outline: 0;\n}\n.vue-html5-editor .content img {\n  max-width: 100%;\n}\n.vue-html5-editor .loading {\n  overflow: hidden;\n  text-align: center;\n  padding: 20px;\n}\n@media (max-width: 767px) {\n  .vue-html5-editor .dashboard label,\n  .vue-html5-editor .dashboard input[type='text'],\n  .vue-html5-editor .dashboard input[type='number'],\n  .vue-html5-editor .dashboard button,\n  .vue-html5-editor .dashboard select {\n    display: block;\n    margin-bottom: 5px;\n    width: 100% !important;\n  }\n  .vue-html5-editor .dashboard label:last-child,\n  .vue-html5-editor .dashboard input[type='text']:last-child,\n  .vue-html5-editor .dashboard input[type='number']:last-child,\n  .vue-html5-editor .dashboard button:last-child,\n  .vue-html5-editor .dashboard select:last-child {\n    margin-bottom: 0;\n  }\n}\n@media (min-width: 768px) {\n  .vue-html5-editor .dashboard label,\n  .vue-html5-editor .dashboard input,\n  .vue-html5-editor .dashboard button,\n  .vue-html5-editor .dashboard select {\n    display: inline-block;\n    margin-right: 4px;\n    max-width: 100%;\n  }\n  .vue-html5-editor .dashboard label:last-child,\n  .vue-html5-editor .dashboard input:last-child,\n  .vue-html5-editor .dashboard button:last-child,\n  .vue-html5-editor .dashboard select:last-child {\n    margin-right: 0;\n  }\n}\n", ""]);
+	exports.push([module.id, "/**\n.vue-html5-editor\n    ├──.toolbar\n    |    ├── ul  (menu)\n    |    └── .dashboard\n    └──.content\n*/\n.vue-html5-editor {\n  font-size: 14px;\n  line-height: 1.5;\n  border: 1px solid #ddd;\n  text-align: left;\n  background-color: white;\n  border-radius: .4em;\n  overflow: hidden;\n}\n.vue-html5-editor * {\n  box-sizing: border-box;\n}\n.vue-html5-editor.full-screen {\n  position: fixed !important;\n  top: 0 !important;\n  left: 0 !important;\n  bottom: 0 !important;\n  right: 0 !important;\n  border-radius: 0;\n}\n.vue-html5-editor > .toolbar {\n  background-color: white;\n  position: relative;\n}\n.vue-html5-editor > .toolbar > ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  border-bottom: 1px solid #ddd;\n}\n.vue-html5-editor > .toolbar > ul > li {\n  display: inline-block;\n  cursor: pointer;\n  width: 50px;\n  text-align: center;\n  line-height: 36px;\n}\n.vue-html5-editor > .toolbar > ul > li .icon {\n  height: 16px;\n  width: 16px;\n  display: inline-block;\n}\n.vue-html5-editor > .toolbar .dashboard {\n  border-bottom: 1px solid #ddd;\n  padding: 10px;\n  position: absolute;\n  top: 100%;\n  left: 0;\n  right: 0;\n  background-color: white;\n  overflow: auto;\n}\n.vue-html5-editor > .toolbar .dashboard input[type='text'],\n.vue-html5-editor > .toolbar .dashboard input[type='number'],\n.vue-html5-editor > .toolbar .dashboard select {\n  padding: 6px 12px;\n  color: #555;\n  background-color: #fff;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;\n}\n.vue-html5-editor > .toolbar .dashboard input[type='text']:focus,\n.vue-html5-editor > .toolbar .dashboard input[type='number']:focus,\n.vue-html5-editor > .toolbar .dashboard select:focus {\n  border-color: #66afe9;\n  outline: 0;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);\n}\n.vue-html5-editor > .toolbar .dashboard input[type='text'][disabled],\n.vue-html5-editor > .toolbar .dashboard input[type='number'][disabled],\n.vue-html5-editor > .toolbar .dashboard select[disabled],\n.vue-html5-editor > .toolbar .dashboard input[type='text'][readonly],\n.vue-html5-editor > .toolbar .dashboard input[type='number'][readonly],\n.vue-html5-editor > .toolbar .dashboard select[readonly] {\n  background-color: #eee;\n  opacity: 1;\n}\n.vue-html5-editor > .toolbar .dashboard input[type='text'][disabled],\n.vue-html5-editor > .toolbar .dashboard input[type='number'][disabled],\n.vue-html5-editor > .toolbar .dashboard select[disabled] {\n  cursor: not-allowed;\n}\n.vue-html5-editor > .toolbar .dashboard button {\n  padding: 6px 12px;\n  white-space: nowrap;\n  vertical-align: middle;\n  cursor: pointer;\n  user-select: none;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  color: #333;\n  background-color: #fff;\n  border-color: #ccc;\n}\n.vue-html5-editor > .toolbar .dashboard button.active,\n.vue-html5-editor > .toolbar .dashboard button:active,\n.vue-html5-editor > .toolbar .dashboard button:focus,\n.vue-html5-editor > .toolbar .dashboard button:hover {\n  color: #333;\n  background-color: #e6e6e6;\n}\n.vue-html5-editor > .toolbar .dashboard button.active,\n.vue-html5-editor > .toolbar .dashboard button:active {\n  border-color: #adadad;\n  outline: 0;\n  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n}\n.vue-html5-editor > .toolbar .dashboard button:focus {\n  border-color: #8c8c8c;\n  text-decoration: none;\n}\n.vue-html5-editor > .toolbar .dashboard button:hover {\n  border-color: #adadad;\n  text-decoration: none;\n}\n.vue-html5-editor > .toolbar .dashboard input,\n.vue-html5-editor > .toolbar .dashboard button,\n.vue-html5-editor > .toolbar .dashboard select {\n  line-height: normal;\n}\n.vue-html5-editor > .toolbar .dashboard label {\n  font-weight: bolder;\n}\n.vue-html5-editor .content {\n  overflow: auto;\n  padding: 10px;\n}\n.vue-html5-editor .content:focus {\n  outline: 0;\n}\n.vue-html5-editor .content img {\n  max-width: 100%;\n}\n.vue-html5-editor .loading {\n  overflow: hidden;\n  text-align: center;\n  padding: 20px;\n}\n@media (max-width: 767px) {\n.vue-html5-editor .dashboard label,\n  .vue-html5-editor .dashboard input[type='text'],\n  .vue-html5-editor .dashboard input[type='number'],\n  .vue-html5-editor .dashboard button,\n  .vue-html5-editor .dashboard select {\n    display: block;\n    margin-bottom: 5px;\n    width: 100% !important;\n}\n.vue-html5-editor .dashboard label:last-child,\n  .vue-html5-editor .dashboard input[type='text']:last-child,\n  .vue-html5-editor .dashboard input[type='number']:last-child,\n  .vue-html5-editor .dashboard button:last-child,\n  .vue-html5-editor .dashboard select:last-child {\n    margin-bottom: 0;\n}\n}\n@media (min-width: 768px) {\n.vue-html5-editor .dashboard label,\n  .vue-html5-editor .dashboard input,\n  .vue-html5-editor .dashboard button,\n  .vue-html5-editor .dashboard select {\n    display: inline-block;\n    margin-right: 4px;\n    max-width: 100%;\n}\n.vue-html5-editor .dashboard label:last-child,\n  .vue-html5-editor .dashboard input:last-child,\n  .vue-html5-editor .dashboard button:last-child,\n  .vue-html5-editor .dashboard select:last-child {\n    margin-right: 0;\n}\n}\n", ""]);
 
 	// exports
 
@@ -1062,33 +1080,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <style lang="less" src="./style.less"></style>
-	// <template>
-	//     <div class="vue-html5-editor" :style="{'z-index':zIndex}" :class="{'full-screen':fullScreen}">
-	//         <div class="toolbar" :style="{'z-index':zIndex+1}" ref:toolbar>
-	//             <ul>
-	//                 <template v-for="module in modules">
-	//                     <li v-if="module.show" :title="locale[module.i18n]"
-	//                         @click="activeModule(module)">
-	//                         <span class="icon" :class="module.icon"></span>
-	//                     </li>
-	//                 </template>
-	//             </ul>
-	//             <div class="dashboard" v-show="dashboard" :style="dashboardStyle">
-	//                 <div v-if="dashboard" :is="dashboard" keep-alive></div>
-	//             </div>
-	//         </div>
-	//         <div class="content" ref:content contenteditable="true" @click="toggleDashboard(dashboard)"
-	//              :style="contentStyle">
-	//         </div>
-	//     </div>
-	// </template>
-	// <script>
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
 	exports.default = {
 	    props: {
 	        content: {
-	            //no longer be required
-	            //twoWay: true,
 	            type: String,
 	            required: true,
 	            default: ""
@@ -1097,7 +1115,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            type: Number,
 	            default: 300,
 	            validator: function validator(val) {
-	                return val >= 300;
+	                return val >= 100;
 	            }
 	        },
 	        zIndex: {
@@ -1221,15 +1239,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	        }
 	    },
-	    compiled: function compiled() {
-	        var editor = this;
-	        editor.modules.forEach(function (module) {
-	            if (typeof module.init == "function") {
-	                module.init(editor);
-	            }
-	        });
-	    },
-	    ready: function ready() {
+	    mounted: function mounted() {
 	        var component = this;
 	        var content = component.$refs.content;
 	        content.innerHTML = component.content;
@@ -1247,6 +1257,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	        };
 
 	        window.addEventListener("touchend", component.touchHandler, false);
+
+	        this.$nextTick(function () {
+	            var editor = this;
+	            editor.modules.forEach(function (module) {
+	                if (typeof module.init == "function") {
+	                    module.init(editor);
+	                }
+	            });
+	        });
 	    },
 	    beforeDestroy: function beforeDestroy() {
 	        var editor = this;
@@ -1258,13 +1277,73 @@ return /******/ (function(modules) { // webpackBootstrap
 	        });
 	    }
 	};
-	// </script>
 
 /***/ },
 /* 42 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<div class=\"vue-html5-editor\" :style=\"{'z-index':zIndex}\" :class=\"{'full-screen':fullScreen}\">\n    <div class=\"toolbar\" :style=\"{'z-index':zIndex+1}\" v-el:toolbar>\n        <ul>\n            <template v-for=\"module in modules\">\n                <li v-if=\"module.show\" :title=\"locale[module.i18n]\"\n                    @click=\"activeModule(module)\">\n                    <span class=\"icon\" :class=\"module.icon\"></span>\n                </li>\n            </template>\n        </ul>\n        <div class=\"dashboard\" v-show=\"dashboard\" :style=\"dashboardStyle\">\n            <div v-if=\"dashboard\" :is=\"dashboard\" keep-alive></div>\n        </div>\n    </div>\n    <div class=\"content\" v-el:content contenteditable=\"true\" @click=\"toggleDashboard(dashboard)\"\n         :style=\"contentStyle\">\n    </div>\n</div>\n";
+	module.exports={render:function (){with(this) {
+	  return _h('div', {
+	    staticClass: "vue-html5-editor",
+	    class: {
+	      'full-screen': fullScreen
+	    },
+	    style: ({
+	      'z-index': zIndex
+	    })
+	  }, [_h('div', {
+	    staticClass: "toolbar",
+	    style: ({
+	      'z-index': zIndex + 1
+	    }),
+	    attrs: {
+	      "ref:toolbar": ""
+	    }
+	  }, [_h('ul', [_l((modules), function(module) {
+	    return [(module.show) ? _h('li', {
+	      attrs: {
+	        "title": locale[module.i18n]
+	      },
+	      on: {
+	        "click": function($event) {
+	          activeModule(module)
+	        }
+	      }
+	    }, [_h('span', {
+	      staticClass: "icon",
+	      class: module.icon
+	    })]) : _e()]
+	  })]), " ", _h('div', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (dashboard),
+	      expression: "dashboard"
+	    }],
+	    staticClass: "dashboard",
+	    style: (dashboardStyle)
+	  }, [_h('keep-alive', [(dashboard) ? _h(dashboard, {
+	    tag: "div"
+	  }) : _e()])])]), " ", _h('div', {
+	    staticClass: "content",
+	    style: (contentStyle),
+	    attrs: {
+	      "ref:content": "",
+	      "contenteditable": "true"
+	    },
+	    on: {
+	      "click": function($event) {
+	        toggleDashboard(dashboard)
+	      }
+	    }
+	  })])
+	}},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-88ae7eb8", module.exports)
+	  }
+	}
 
 /***/ },
 /* 43 */
@@ -1297,30 +1376,110 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(45)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* template */
+	var __vue_template__ = __webpack_require__(45)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
 	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/Rylan/Desktop/html/src/modules/text/dashboard.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/peak/workspace/vue-html5-editor/src/modules/text/dashboard.vue"
+	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
+	    hotAPI.createRecord("data-v-7781a31e", __vue_options__)
 	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
+	    hotAPI.reload("data-v-7781a31e", __vue_options__)
 	  }
 	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] dashboard.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
 
 /***/ },
 /* 45 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<button type=\"button\" @click=\"$parent.execCommand('bold')\">{{$parent.locale[\"bold\"]}}</button>\n<button type=\"button\" @click=\"$parent.execCommand('italic')\">{{$parent.locale[\"italic\"]}}</button>\n<button type=\"button\" @click=\"$parent.execCommand('underline')\">{{$parent.locale[\"underline\"]}}</button>\n<button type=\"button\" @click=\"$parent.execCommand('strikeThrough')\">{{$parent.locale[\"strike through\"]}}</button>\n<button type=\"button\" @click=\"$parent.execCommand('subscript')\">{{$parent.locale[\"subscript\"]}}</button>\n<button type=\"button\" @click=\"$parent.execCommand('superscript')\">{{$parent.locale[\"superscript\"]}}</button>\n";
+	module.exports={render:function (){with(this) {
+	  return _h('div', [_h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $parent.execCommand('bold')
+	      }
+	    }
+	  }, [_s($parent.locale["bold"])]), " ", _h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $parent.execCommand('italic')
+	      }
+	    }
+	  }, [_s($parent.locale["italic"])]), " ", _h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $parent.execCommand('underline')
+	      }
+	    }
+	  }, [_s($parent.locale["underline"])]), " ", _h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $parent.execCommand('strikeThrough')
+	      }
+	    }
+	  }, [_s($parent.locale["strike through"])]), " ", _h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $parent.execCommand('subscript')
+	      }
+	    }
+	  }, [_s($parent.locale["subscript"])]), " ", _h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $parent.execCommand('superscript')
+	      }
+	    }
+	  }, [_s($parent.locale["superscript"])])])
+	}},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-7781a31e", module.exports)
+	  }
+	}
 
 /***/ },
 /* 46 */
@@ -1354,30 +1513,48 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* styles */
 	__webpack_require__(48)
-	__vue_script__ = __webpack_require__(50)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/modules/font/dashboard.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(51)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+
+	/* script */
+	__vue_exports__ = __webpack_require__(50)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(51)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
 	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/Rylan/Desktop/html/src/modules/font/dashboard.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/peak/workspace/vue-html5-editor/src/modules/font/dashboard.vue"
+	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
+	    hotAPI.createRecord("data-v-5b34d213", __vue_options__)
 	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
+	    hotAPI.reload("data-v-5b34d213", __vue_options__)
 	  }
 	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] dashboard.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
 
 /***/ },
 /* 48 */
@@ -1395,8 +1572,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./dashboard.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./dashboard.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5b34d213!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dashboard.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5b34d213!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dashboard.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1428,40 +1605,40 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <style>
-	//     .vue-html5-editor .dashboard .dashboard-font {
-	//         line-height: 36px;
-	//     }
-	// </style>
-	// <template>
-	//     <div class="dashboard-font">
-	//         <div>
-	//             <label>{{$parent.locale["heading"]}}:</label>
-	//             <button v-for="h in 6" type="button" @click="setHeading(h+1)">H{{h+1}}</button>
-	//         </div>
-	//         <div>
-	//             <label>
-	//                 {{$parent.locale["font name"]}}:
-	//             </label>
-	//             <button v-for="name in nameList" type="button" @click="setFontName(name)">{{name}}</button>
-	//         </div>
-	//         <div>
-	//             <label>
-	//                 {{$parent.locale["font size"]}}:
-	//             </label>
-	//             <button v-for="size in 7" type="button" @click="setFontSize(size+1)">{{size+1}}</button>
-	//         </div>
-	//         <div>
-	//             <label>
-	//                 {{$parent.locale["line height"]}}:
-	//             </label>
-	//             <button v-for="lh in lineHeightList" type="button" @click="setLineHeight(lh)">
-	//                 {{lh}}
-	//             </button>
-	//         </div>
-	//     </div>
-	// </template>
-	// <script>
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
 	exports.default = {
 	    data: function data() {
 	        return {
@@ -1524,13 +1701,66 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    }
 	};
-	// </script>
 
 /***/ },
 /* 51 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<div class=\"dashboard-font\">\n    <div>\n        <label>{{$parent.locale[\"heading\"]}}:</label>\n        <button v-for=\"h in 6\" type=\"button\" @click=\"setHeading(h+1)\">H{{h+1}}</button>\n    </div>\n    <div>\n        <label>\n            {{$parent.locale[\"font name\"]}}:\n        </label>\n        <button v-for=\"name in nameList\" type=\"button\" @click=\"setFontName(name)\">{{name}}</button>\n    </div>\n    <div>\n        <label>\n            {{$parent.locale[\"font size\"]}}:\n        </label>\n        <button v-for=\"size in 7\" type=\"button\" @click=\"setFontSize(size+1)\">{{size+1}}</button>\n    </div>\n    <div>\n        <label>\n            {{$parent.locale[\"line height\"]}}:\n        </label>\n        <button v-for=\"lh in lineHeightList\" type=\"button\" @click=\"setLineHeight(lh)\">\n            {{lh}}\n        </button>\n    </div>\n</div>\n";
+	module.exports={render:function (){with(this) {
+	  return _h('div', {
+	    staticClass: "dashboard-font"
+	  }, [_h('div', [_h('label', [_s($parent.locale["heading"]) + ":"]), " ", _l((6), function(h) {
+	    return _h('button', {
+	      attrs: {
+	        "type": "button"
+	      },
+	      on: {
+	        "click": function($event) {
+	          setHeading(h + 1)
+	        }
+	      }
+	    }, ["H" + _s(h + 1)])
+	  })]), " ", _h('div', [_h('label', ["\n            " + _s($parent.locale["font name"]) + ":\n        "]), " ", _l((nameList), function(name) {
+	    return _h('button', {
+	      attrs: {
+	        "type": "button"
+	      },
+	      on: {
+	        "click": function($event) {
+	          setFontName(name)
+	        }
+	      }
+	    }, [_s(name)])
+	  })]), " ", _h('div', [_h('label', ["\n            " + _s($parent.locale["font size"]) + ":\n        "]), " ", _l((7), function(size) {
+	    return _h('button', {
+	      attrs: {
+	        "type": "button"
+	      },
+	      on: {
+	        "click": function($event) {
+	          setFontSize(size + 1)
+	        }
+	      }
+	    }, [_s(size + 1)])
+	  })]), " ", _h('div', [_h('label', ["\n            " + _s($parent.locale["line height"]) + ":\n        "]), " ", _l((lineHeightList), function(lh) {
+	    return _h('button', {
+	      attrs: {
+	        "type": "button"
+	      },
+	      on: {
+	        "click": function($event) {
+	          setLineHeight(lh)
+	        }
+	      }
+	    }, ["\n            " + _s(lh) + "\n        "])
+	  })])])
+	}},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5b34d213", module.exports)
+	  }
+	}
 
 /***/ },
 /* 52 */
@@ -1564,30 +1794,48 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* styles */
 	__webpack_require__(54)
-	__vue_script__ = __webpack_require__(56)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/modules/color/dashboard.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(57)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+
+	/* script */
+	__vue_exports__ = __webpack_require__(56)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(57)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
 	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/Rylan/Desktop/html/src/modules/color/dashboard.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/peak/workspace/vue-html5-editor/src/modules/color/dashboard.vue"
+	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
+	    hotAPI.createRecord("data-v-799c0db9", __vue_options__)
 	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
+	    hotAPI.reload("data-v-799c0db9", __vue_options__)
 	  }
 	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] dashboard.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
 
 /***/ },
 /* 54 */
@@ -1605,8 +1853,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./dashboard.vue", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js!./../../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./dashboard.vue");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-799c0db9!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dashboard.vue", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-799c0db9!./../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./dashboard.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1638,33 +1886,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <style>
-	//     .vue-html5-editor .color-card {
-	//         margin: 2px;
-	//         width: 30px;
-	//         height: 30px;
-	//         float: left;
-	//         cursor: pointer;
-	//     }
-	// </style>
-	// <template>
-	//     <div>
-	//         <label>
-	//             <input type="radio" value="foreColor" v-model="command">&nbsp;
-	//             {{$parent.locale["fore color"]}}
-	//         </label>
-	//         <label>
-	//             <input type="radio" value="backColor" v-model="command">&nbsp;
-	//             {{$parent.locale["background color"]}}
-	//         </label>
-	//     </div>
-	//     <div>
-	//         <div v-for="color in colors" :style="{'background-color':color}" class="color-card" @click="changeColor(color)">
-	//         </div>
-	//         <div style="clear: both"></div>
-	//     </div>
-	// </template>
-	// <script>
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
 	exports.default = {
 	    data: function data() {
 	        return {
@@ -1679,13 +1925,76 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    }
 	};
-	// </script>
 
 /***/ },
 /* 57 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<div>\n    <label>\n        <input type=\"radio\" value=\"foreColor\" v-model=\"command\">&nbsp;\n        {{$parent.locale[\"fore color\"]}}\n    </label>\n    <label>\n        <input type=\"radio\" value=\"backColor\" v-model=\"command\">&nbsp;\n        {{$parent.locale[\"background color\"]}}\n    </label>\n</div>\n<div>\n    <div v-for=\"color in colors\" :style=\"{'background-color':color}\" class=\"color-card\" @click=\"changeColor(color)\">\n    </div>\n    <div style=\"clear: both\"></div>\n</div>\n";
+	module.exports={render:function (){with(this) {
+	  return _h('div', [_h('label', [_h('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (command),
+	      expression: "command"
+	    }],
+	    attrs: {
+	      "type": "radio",
+	      "value": "foreColor"
+	    },
+	    domProps: {
+	      "checked": _q(command, "foreColor")
+	    },
+	    on: {
+	      "change": function($event) {
+	        command = "foreColor"
+	      }
+	    }
+	  }), " \n        " + _s($parent.locale["fore color"]) + "\n    "]), " ", _h('label', [_h('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (command),
+	      expression: "command"
+	    }],
+	    attrs: {
+	      "type": "radio",
+	      "value": "backColor"
+	    },
+	    domProps: {
+	      "checked": _q(command, "backColor")
+	    },
+	    on: {
+	      "change": function($event) {
+	        command = "backColor"
+	      }
+	    }
+	  }), " \n        " + _s($parent.locale["background color"]) + "\n    "]), " ", _l((colors), function(color) {
+	    return _h('div', {
+	      staticClass: "color-card",
+	      style: ({
+	        'background-color': color
+	      }),
+	      on: {
+	        "click": function($event) {
+	          changeColor(color)
+	        }
+	      }
+	    })
+	  }), " ", _m(0)])
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('div', {
+	    attrs: {
+	      "style": "clear: both"
+	    }
+	  })
+	}}]}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-799c0db9", module.exports)
+	  }
+	}
 
 /***/ },
 /* 58 */
@@ -1718,30 +2027,83 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(60)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* template */
+	var __vue_template__ = __webpack_require__(60)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
 	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/Rylan/Desktop/html/src/modules/align/dashboard.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/peak/workspace/vue-html5-editor/src/modules/align/dashboard.vue"
+	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
+	    hotAPI.createRecord("data-v-2a9771db", __vue_options__)
 	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
+	    hotAPI.reload("data-v-2a9771db", __vue_options__)
 	  }
 	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] dashboard.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
 
 /***/ },
 /* 60 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<button type=\"button\" @click=\"$parent.execCommand('justifyLeft')\">\n    {{$parent.locale[\"left justify\"]}}\n</button>\n<button type=\"button\" @click=\"$parent.execCommand('justifyCenter')\">\n    {{$parent.locale[\"center justify\"]}}\n</button>\n<button type=\"button\" @click=\"$parent.execCommand('justifyRight')\">\n    {{$parent.locale[\"right justify\"]}}\n</button>\n";
+	module.exports={render:function (){with(this) {
+	  return _h('div', [_h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $parent.execCommand('justifyLeft')
+	      }
+	    }
+	  }, ["\n        " + _s($parent.locale["left justify"]) + "\n    "]), " ", _h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $parent.execCommand('justifyCenter')
+	      }
+	    }
+	  }, ["\n        " + _s($parent.locale["center justify"]) + "\n    "]), " ", _h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $parent.execCommand('justifyRight')
+	      }
+	    }
+	  }, ["\n        " + _s($parent.locale["right justify"]) + "\n    "])])
+	}},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-2a9771db", module.exports)
+	  }
+	}
 
 /***/ },
 /* 61 */
@@ -1774,30 +2136,74 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(63)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* template */
+	var __vue_template__ = __webpack_require__(63)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
 	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/Rylan/Desktop/html/src/modules/list/dashboard.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/peak/workspace/vue-html5-editor/src/modules/list/dashboard.vue"
+	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
+	    hotAPI.createRecord("data-v-7a7e4022", __vue_options__)
 	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
+	    hotAPI.reload("data-v-7a7e4022", __vue_options__)
 	  }
 	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] dashboard.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
 
 /***/ },
 /* 63 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<button type=\"button\" @click=\"$parent.execCommand('insertOrderedList')\">\n    {{$parent.locale[\"ordered list\"]}}\n</button>\n<button type=\"button\" @click=\"$parent.execCommand('insertUnorderedList')\">\n    {{$parent.locale[\"unordered list\"]}}\n</button>\n";
+	module.exports={render:function (){with(this) {
+	  return _h('div', [_h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $parent.execCommand('insertOrderedList')
+	      }
+	    }
+	  }, ["\n        " + _s($parent.locale["ordered list"]) + "\n    "]), " ", _h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $parent.execCommand('insertUnorderedList')
+	      }
+	    }
+	  }, ["\n        " + _s($parent.locale["unordered list"]) + "\n    "])])
+	}},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-7a7e4022", module.exports)
+	  }
+	}
 
 /***/ },
 /* 64 */
@@ -1830,29 +2236,45 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(66)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/modules/link/dashboard.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(67)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* script */
+	__vue_exports__ = __webpack_require__(66)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(67)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
 	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/Rylan/Desktop/html/src/modules/link/dashboard.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/peak/workspace/vue-html5-editor/src/modules/link/dashboard.vue"
+	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
+	    hotAPI.createRecord("data-v-2c23a304", __vue_options__)
 	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
+	    hotAPI.reload("data-v-2c23a304", __vue_options__)
 	  }
 	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] dashboard.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
 
 /***/ },
 /* 66 */
@@ -1863,13 +2285,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <template>
-	//     <form @submit.prevent="createLink">
-	//         <input type="text" :placeholder="$parent.locale['please enter a url']" v-model="url" maxlength="1024">
-	//         <button type="submit">{{$parent.locale["create link"]}}</button>
-	//     </form>
-	// </template>
-	// <script>
+	//
+	//
+	//
+	//
+	//
+	//
+
 	exports.default = {
 	    data: function data() {
 	        return { url: null };
@@ -1885,13 +2307,52 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    }
 	};
-	// </script>
 
 /***/ },
 /* 67 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<form @submit.prevent=\"createLink\">\n    <input type=\"text\" :placeholder=\"$parent.locale['please enter a url']\" v-model=\"url\" maxlength=\"1024\">\n    <button type=\"submit\">{{$parent.locale[\"create link\"]}}</button>\n</form>\n";
+	module.exports={render:function (){with(this) {
+	  return _h('form', {
+	    on: {
+	      "submit": function($event) {
+	        $event.preventDefault();
+	        createLink($event)
+	      }
+	    }
+	  }, [_h('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (url),
+	      expression: "url"
+	    }],
+	    attrs: {
+	      "type": "text",
+	      "placeholder": $parent.locale['please enter a url'],
+	      "maxlength": "1024"
+	    },
+	    domProps: {
+	      "value": _s(url)
+	    },
+	    on: {
+	      "input": function($event) {
+	        if ($event.target.composing) return;
+	        url = $event.target.value
+	      }
+	    }
+	  }), " ", _h('button', {
+	    attrs: {
+	      "type": "submit"
+	    }
+	  }, [_s($parent.locale["create link"])])])
+	}},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-2c23a304", module.exports)
+	  }
+	}
 
 /***/ },
 /* 68 */
@@ -1951,29 +2412,45 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(71)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/modules/table/dashboard.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(72)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* script */
+	__vue_exports__ = __webpack_require__(71)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(72)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
 	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/Rylan/Desktop/html/src/modules/table/dashboard.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/peak/workspace/vue-html5-editor/src/modules/table/dashboard.vue"
+	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
+	    hotAPI.createRecord("data-v-067582e4", __vue_options__)
 	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
+	    hotAPI.reload("data-v-067582e4", __vue_options__)
 	  }
 	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] dashboard.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
 
 /***/ },
 /* 71 */
@@ -1984,21 +2461,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <template>
-	//     <form @submit.prevent="insertTable">
-	//         <label>
-	//             {{$parent.locale["row count"]}}
-	//             <input type="number" style="width: 60px" maxlength="2" min="2" max="10" v-model="rows">
-	//         </label>
-	//         <label>
-	//             {{$parent.locale["column count"]}}
-	//             <input type="number" style="width: 60px" maxlength="2" min="2" max="10" v-model="cols">
-	//         </label>
 	//
-	//         <button type="submit">{{$parent.locale.save}}</button>
-	//     </form>
-	// </template>
-	// <script>
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
 	exports.default = {
 	    data: function data() {
 	        return {
@@ -2032,14 +2509,77 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    }
 	};
-	// </script>
-	//
 
 /***/ },
 /* 72 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<form @submit.prevent=\"insertTable\">\n    <label>\n        {{$parent.locale[\"row count\"]}}\n        <input type=\"number\" style=\"width: 60px\" maxlength=\"2\" min=\"2\" max=\"10\" v-model=\"rows\">\n    </label>\n    <label>\n        {{$parent.locale[\"column count\"]}}\n        <input type=\"number\" style=\"width: 60px\" maxlength=\"2\" min=\"2\" max=\"10\" v-model=\"cols\">\n    </label>\n\n    <button type=\"submit\">{{$parent.locale.save}}</button>\n</form>\n";
+	module.exports={render:function (){with(this) {
+	  return _h('form', {
+	    on: {
+	      "submit": function($event) {
+	        $event.preventDefault();
+	        insertTable($event)
+	      }
+	    }
+	  }, [_h('label', ["\n        " + _s($parent.locale["row count"]) + "\n        ", _h('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (rows),
+	      expression: "rows"
+	    }],
+	    attrs: {
+	      "type": "number",
+	      "style": "width: 60px",
+	      "maxlength": "2",
+	      "min": "2",
+	      "max": "10"
+	    },
+	    domProps: {
+	      "value": _s(rows)
+	    },
+	    on: {
+	      "input": function($event) {
+	        if ($event.target.composing) return;
+	        rows = _n($event.target.value)
+	      }
+	    }
+	  })]), " ", _h('label', ["\n        " + _s($parent.locale["column count"]) + "\n        ", _h('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (cols),
+	      expression: "cols"
+	    }],
+	    attrs: {
+	      "type": "number",
+	      "style": "width: 60px",
+	      "maxlength": "2",
+	      "min": "2",
+	      "max": "10"
+	    },
+	    domProps: {
+	      "value": _s(cols)
+	    },
+	    on: {
+	      "input": function($event) {
+	        if ($event.target.composing) return;
+	        cols = _n($event.target.value)
+	      }
+	    }
+	  })]), " ", _h('button', {
+	    attrs: {
+	      "type": "submit"
+	    }
+	  }, [_s($parent.locale.save)])])
+	}},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-067582e4", module.exports)
+	  }
+	}
 
 /***/ },
 /* 73 */
@@ -2090,29 +2630,45 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(75)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/modules/image/dashboard.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(115)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* script */
+	__vue_exports__ = __webpack_require__(75)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(115)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
 	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/Rylan/Desktop/html/src/modules/image/dashboard.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/peak/workspace/vue-html5-editor/src/modules/image/dashboard.vue"
+	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
+	    hotAPI.createRecord("data-v-a312949e", __vue_options__)
 	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
+	    hotAPI.reload("data-v-a312949e", __vue_options__)
 	  }
 	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] dashboard.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
 
 /***/ },
 /* 75 */
@@ -2148,7 +2704,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.upload.status = "ready";
 	        },
 	        pick: function pick() {
-	            this.$els.file.click();
+	            this.$refs.file.click();
 	        },
 	        insertImage: function insertImage(e) {
 	            e.preventDefault();
@@ -2162,13 +2718,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var component = this;
 	            var config = component.$options.module.config;
 
-	            var file = this.$els.file.files[0];
+	            var file = this.$refs.file.files[0];
 	            if (file.size > config.size_limit) {
 	                var prompt = component.$parent.locale["exceed size limit"];
 	                alert(prompt);
 	                return;
 	            }
-	            component.$els.file.value = null;
+	            component.$refs.file.value = null;
 	            //需要压缩
 	            if (config.compress) {
 	                (0, _lrzAll2.default)(file, {
@@ -2247,38 +2803,34 @@ return /******/ (function(modules) { // webpackBootstrap
 	            xhr.send(formData);
 	        }
 	    }
-	};
-
-	// </script>
-	// <template>
+	}; //
 	//
-	//     <div>
-	//         <form @submit="insertImage" v-if="upload.status=='ready'">
-	//             <input type="text" v-model="url" maxlength="255" :placeholder="$parent.locale['please enter a url']">
-	//             <button type="submit">{{$parent.locale.save}}</button>
-	//             <button type="button" @click="pick">{{$parent.locale.upload}}</button>
-	//             <input type="file" v-el:file style="display: none !important;" @change="selectFile"
-	//                    accept="image/png,image/jpeg,image/gif,image/jpg">
-	//         </form>
-	//         <div v-if="upload.status=='progress'">
-	//             {{$parent.locale.progress}}:{{progressComputable ? $parent.locale.unknown : upload.complete}}
-	//         </div>
-	//         <div v-if="upload.status=='success'">
-	//             {{$parent.locale.["please wait"]}}...
-	//         </div>
-	//         <div v-if="upload.status=='error'">
-	//             {{$parent.locale.upload}}&nbsp;{{$parent.locale.error}},
-	//             <button type="button" @click="reset">{{$parent.locale.reset}}</button>
-	//         </div>
-	//         <div v-if="upload.status=='abort'">
-	//             {{$parent.locale.upload}}&nbsp;{{$parent.locale.abort}},
-	//             <button type="button" @click="reset">{{$parent.locale.reset}}</button>
-	//         </div>
-	//     </div>
 	//
-	// </template>
 	//
-	// <script>
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ },
 /* 76 */
@@ -3047,14 +3599,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _symbol2 = _interopRequireDefault(_symbol);
 
-	var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default ? "symbol" : typeof obj; };
+	var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj; };
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.default) === "symbol" ? function (obj) {
 	  return typeof obj === "undefined" ? "undefined" : _typeof(obj);
 	} : function (obj) {
-	  return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
+	  return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
 	};
 
 /***/ },
@@ -3883,9 +4435,77 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 115 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n\n<div>\n    <form @submit=\"insertImage\" v-if=\"upload.status=='ready'\">\n        <input type=\"text\" v-model=\"url\" maxlength=\"255\" :placeholder=\"$parent.locale['please enter a url']\">\n        <button type=\"submit\">{{$parent.locale.save}}</button>\n        <button type=\"button\" @click=\"pick\">{{$parent.locale.upload}}</button>\n        <input type=\"file\" v-el:file style=\"display: none !important;\" @change=\"selectFile\"\n               accept=\"image/png,image/jpeg,image/gif,image/jpg\">\n    </form>\n    <div v-if=\"upload.status=='progress'\">\n        {{$parent.locale.progress}}:{{progressComputable ? $parent.locale.unknown : upload.complete}}\n    </div>\n    <div v-if=\"upload.status=='success'\">\n        {{$parent.locale.[\"please wait\"]}}...\n    </div>\n    <div v-if=\"upload.status=='error'\">\n        {{$parent.locale.upload}}&nbsp;{{$parent.locale.error}},\n        <button type=\"button\" @click=\"reset\">{{$parent.locale.reset}}</button>\n    </div>\n    <div v-if=\"upload.status=='abort'\">\n        {{$parent.locale.upload}}&nbsp;{{$parent.locale.abort}},\n        <button type=\"button\" @click=\"reset\">{{$parent.locale.reset}}</button>\n    </div>\n</div>\n\n";
+	module.exports={render:function (){with(this) {
+	  return _h('div', [(upload.status == 'ready') ? _h('form', {
+	    on: {
+	      "submit": insertImage
+	    }
+	  }, [_h('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model",
+	      value: (url),
+	      expression: "url"
+	    }],
+	    attrs: {
+	      "type": "text",
+	      "maxlength": "255",
+	      "placeholder": $parent.locale['please enter a url']
+	    },
+	    domProps: {
+	      "value": _s(url)
+	    },
+	    on: {
+	      "input": function($event) {
+	        if ($event.target.composing) return;
+	        url = $event.target.value
+	      }
+	    }
+	  }), " ", _h('button', {
+	    attrs: {
+	      "type": "submit"
+	    }
+	  }, [_s($parent.locale.save)]), " ", _h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": pick
+	    }
+	  }, [_s($parent.locale.upload)]), " ", _h('input', {
+	    attrs: {
+	      "type": "file",
+	      "ref:file": "",
+	      "style": "display: none !important;",
+	      "accept": "image/png,image/jpeg,image/gif,image/jpg"
+	    },
+	    on: {
+	      "change": selectFile
+	    }
+	  })]) : _e(), " ", (upload.status == 'progress') ? _h('div', ["\n        " + _s($parent.locale.progress) + ":" + _s(progressComputable ? $parent.locale.unknown : upload.complete) + "\n    "]) : _e(), " ", (upload.status == 'success') ? _h('div', ["\n        please wait...\n    "]) : _e(), " ", (upload.status == 'error') ? _h('div', ["\n        " + _s($parent.locale.upload) + " " + _s($parent.locale.error) + ",\n        ", _h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": reset
+	    }
+	  }, [_s($parent.locale.reset)])]) : _e(), " ", (upload.status == 'abort') ? _h('div', ["\n        " + _s($parent.locale.upload) + " " + _s($parent.locale.abort) + ",\n        ", _h('button', {
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": reset
+	    }
+	  }, [_s($parent.locale.reset)])]) : _e()])
+	}},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-a312949e", module.exports)
+	  }
+	}
 
 /***/ },
 /* 116 */
@@ -4019,29 +4639,45 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(122)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/modules/info/dashboard.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(123)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* script */
+	__vue_exports__ = __webpack_require__(122)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(123)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
 	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/Rylan/Desktop/html/src/modules/info/dashboard.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "/Users/peak/workspace/vue-html5-editor/src/modules/info/dashboard.vue"
+	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
+	    hotAPI.createRecord("data-v-eb2ecf9c", __vue_options__)
 	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
+	    hotAPI.reload("data-v-eb2ecf9c", __vue_options__)
 	  }
 	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] dashboard.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
 
 /***/ },
 /* 122 */
@@ -4052,30 +4688,54 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <template>
-	//     <h3 style="text-align: center">Vue-html5-editor&nbsp;{{version}}</h3>
-	//     <p style="text-align: center">
-	//         GitHub:
-	//         <a href="https://github.com/PeakTai/vue-html5-editor" target="_blank">
-	//             https://github.com/PeakTai/vue-html5-editor
-	//         </a>
-	//     </p>
-	// </template>
-	// <script>
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
 	exports.default = {
 	    data: function data() {
 	        return {
-	            version: ("0.5.1")
+	            version: ("0.5.4")
 	        };
 	    }
 	};
-	// </script>
 
 /***/ },
 /* 123 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<h3 style=\"text-align: center\">Vue-html5-editor&nbsp;{{version}}</h3>\n<p style=\"text-align: center\">\n    GitHub:\n    <a href=\"https://github.com/PeakTai/vue-html5-editor\" target=\"_blank\">\n        https://github.com/PeakTai/vue-html5-editor\n    </a>\n</p>\n";
+	module.exports={render:function (){with(this) {
+	  return _h('div', [_h('h3', {
+	    attrs: {
+	      "style": "text-align: center"
+	    }
+	  }, ["Vue-html5-editor " + _s(version)]), " ", _m(0)])
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('p', {
+	    attrs: {
+	      "style": "text-align: center"
+	    }
+	  }, ["\n        GitHub:\n        ", _h('a', {
+	    attrs: {
+	      "href": "https://github.com/PeakTai/vue-html5-editor",
+	      "target": "_blank"
+	    }
+	  }, ["\n            https://github.com/PeakTai/vue-html5-editor\n        "])])
+	}}]}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-eb2ecf9c", module.exports)
+	  }
+	}
 
 /***/ },
 /* 124 */
