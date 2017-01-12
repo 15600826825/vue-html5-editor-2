@@ -1106,10 +1106,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = {
 	    props: {
-	        content: {
-	            type: String,
-	            required: true,
-	            default: ""
+	        value: {
+	            required: true
 	        },
 	        height: {
 	            type: Number,
@@ -1127,6 +1125,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            default: true
 	        }
 	    },
+
 	    data: function data() {
 	        return {
 	            //locale: {},
@@ -1136,8 +1135,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        };
 	    },
 
+
 	    watch: {
-	        content: function content(val) {
+	        value: function value(val) {
 	            var content = this.$refs.content.innerHTML;
 	            if (val != content) {
 	                this.$refs.content.innerHTML = val;
@@ -1182,6 +1182,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return style;
 	        }
 	    },
+
 	    methods: {
 	        computeDashboardStyle: function computeDashboardStyle() {
 	            this.dashboardStyle = { 'max-height': this.$refs.content.clientHeight + 'px' };
@@ -1198,7 +1199,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        execCommand: function execCommand(command, arg) {
 	            this.restoreSelection();
 	            document.execCommand(command, false, arg);
-	            this.content = this.$refs.content.innerHTML;
+
+	            if (this.value != this.$refs.content.innerHTML) {
+	                this.$emit('input', this.$refs.content.innerHTML);
+	                this.saveCurrentRange();
+	            }
 	            this.dashboard = null;
 	        },
 	        getCurrentRange: function getCurrentRange() {
@@ -1212,6 +1217,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	            if (this.$refs.content.contains(range.startContainer) && this.$refs.content.contains(range.endContainer)) {
 	                this.range = range;
+	            }
+
+	            if (this.value != this.$refs.content.innerHTML) {
+	                this.$emit('input', this.$refs.content.innerHTML);
 	            }
 	        },
 	        restoreSelection: function restoreSelection() {
@@ -1239,6 +1248,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	        }
 	    },
+
 	    mounted: function mounted() {
 	        var component = this;
 	        var content = component.$refs.content;
@@ -1267,6 +1277,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            });
 	        });
 	    },
+
 	    beforeDestroy: function beforeDestroy() {
 	        var editor = this;
 	        window.removeEventListener("touchend", editor.touchHandler);
@@ -1292,13 +1303,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      'z-index': _vm.zIndex
 	    })
 	  }, [_c('div', {
+	    ref: "toolbar",
 	    staticClass: "toolbar",
 	    style: ({
 	      'z-index': _vm.zIndex + 1
-	    }),
-	    attrs: {
-	      "ref:toolbar": ""
-	    }
+	    })
 	  }, [_c('ul', [_vm._l((_vm.modules), function(module) {
 	    return [(module.show) ? _c('li', {
 	      attrs: {
@@ -1325,10 +1334,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, [_c('keep-alive', [(_vm.dashboard) ? _c(_vm.dashboard, {
 	    tag: "div"
 	  }) : _vm._e()])])]), _vm._v(" "), _c('div', {
+	    ref: "content",
 	    staticClass: "content",
 	    style: (_vm.contentStyle),
 	    attrs: {
-	      "ref:content": "",
 	      "contenteditable": "true"
 	    },
 	    on: {

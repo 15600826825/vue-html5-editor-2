@@ -1,7 +1,7 @@
 <style lang="less" src="./style.less"></style>
 <template>
     <div class="vue-html5-editor" :style="{'z-index':zIndex}" :class="{'full-screen':fullScreen}">
-        <div class="toolbar" :style="{'z-index':zIndex+1}" ref:toolbar>
+        <div class="toolbar" :style="{'z-index':zIndex+1}" ref="toolbar">
             <ul>
                 <template v-for="module in modules">
                     <li v-if="module.show" :title="locale[module.i18n]"
@@ -16,7 +16,7 @@
                 </keep-alive>
             </div>
         </div>
-        <div class="content" ref:content contenteditable="true" @click="toggleDashboard(dashboard)"
+        <div class="content" ref="content" contenteditable="true" @click="toggleDashboard(dashboard)"
              :style="contentStyle">
         </div>
     </div>
@@ -24,10 +24,8 @@
 <script>
     export default {
         props: {
-            content: {
-                type: String,
+            value: {
                 required: true,
-                default: ""
             },
             height: {
                 type: Number,
@@ -45,6 +43,7 @@
                 default: true
             }
         },
+
         data () {
             return {
                 //locale: {},
@@ -53,18 +52,21 @@
                 dashboardStyle: {},
             }
         },
+
         watch: {
-            content(val) {
+            value(val) {
                 let content = this.$refs.content.innerHTML
                 if (val != content) {
                     this.$refs.content.innerHTML = val
                 }
             },
+
             dashboard(val){
                 if (val) {
                     this.computeDashboardStyle()
                 }
             },
+
             fullScreen(val){
                 let component = this
                 component.$nextTick(function () {
@@ -82,8 +84,8 @@
                 }
                 component.$appendTo(component.parentEl)
             }
-        }
-        ,
+        },
+
         computed: {
             contentStyle(){
                 let style = {}
@@ -99,28 +101,39 @@
                 return style
             }
         },
+
         methods: {
             computeDashboardStyle(){
                 this.dashboardStyle = {'max-height': this.$refs.content.clientHeight + 'px'}
             },
+
             getContentElement(){
                 return this.$refs.content
             },
+
             toggleFullScreen(){
                 this.fullScreen = !this.fullScreen
             },
+
             toggleDashboard(dashboard){
                 this.dashboard == dashboard ? this.dashboard = null : this.dashboard = dashboard
             },
+
             execCommand(command, arg){
                 this.restoreSelection()
                 document.execCommand(command, false, arg)
-                this.content = this.$refs.content.innerHTML
+
+                if (this.value != this.$refs.content.innerHTML) {
+                        this.$emit('input', this.$refs.content.innerHTML)
+                        this.saveCurrentRange()
+                }
                 this.dashboard = null
             },
+
             getCurrentRange(){
                 return this.range
             },
+
             saveCurrentRange(){
                 let selection = window.getSelection ? window.getSelection() : document.getSelection()
                 let range = selection.rangeCount ? selection.getRangeAt(0) : null
@@ -131,7 +144,12 @@
                         this.$refs.content.contains(range.endContainer)) {
                     this.range = range
                 }
+
+                if (this.value != this.$refs.content.innerHTML) {
+                        this.$emit('input', this.$refs.content.innerHTML)
+                }
             },
+
             restoreSelection(){
                 let selection = window.getSelection ? window.getSelection() : document.getSelection()
                 selection.removeAllRanges()
@@ -147,6 +165,7 @@
                     selection.addRange(range)
                 }
             },
+
             activeModule(module){
                 if (typeof module.handler == "function") {
                     module.handler(this)
@@ -157,6 +176,7 @@
                 }
             }
         },
+
         mounted: function () {
             let component = this
             let content = component.$refs.content
@@ -185,6 +205,7 @@
                 })
             })
         },
+
         beforeDestroy(){
             let editor = this
             window.removeEventListener("touchend", editor.touchHandler)
