@@ -6,9 +6,9 @@ module.exports = {
     entry: "./index.js",
     output: {
         path: __dirname + "/dist",
-        filename: "vue-html5-editor.js",
+        filename: "vue2-html5-editor.js",
         libraryTarget: "umd",
-        library: "VueHtml5Editor"
+        library: "Vue2Html5Editor"
     },
     module: {
         loaders: [
@@ -24,7 +24,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.BannerPlugin("Vue-html5-editor " + package.version + "\nhttps://github.com/PeakTai/vue-html5-editor"),
         new webpack.DefinePlugin({
             ROOT: JSON.stringify(path.normalize(__dirname)),
         }),

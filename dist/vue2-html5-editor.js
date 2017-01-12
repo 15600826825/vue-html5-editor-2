@@ -1,16 +1,12 @@
-/*!
- * Vue-html5-editor 0.5.5
- * https://github.com/PeakTai/vue-html5-editor
- */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["VueHtml5Editor"] = factory();
+		exports["Vue2Html5Editor"] = factory();
 	else
-		root["VueHtml5Editor"] = factory();
+		root["Vue2Html5Editor"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -228,7 +224,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        components: components
 	    });
 
-	    Vue.component(options.name || "vue-html5-editor", component);
+	    Vue.component(options.name || "vue2-html5-editor", component);
 	};
 
 /***/ },
@@ -4731,7 +4727,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = {
 	    data: function data() {
 	        return {
-	            version: ("0.5.5")
+	            version: ("0.6")
 	        };
 	    }
 	};

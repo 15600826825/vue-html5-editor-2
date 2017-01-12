@@ -1,22 +1,19 @@
 {
-  "name": "vue-html5-editor-2",
-  "version": "0.6",
+  "name": "vue2-html5-editor-2",
+  "version": "0.6.1",
   "description": "A WYSIWYG text editor base on html5 and vue",
   "repository": {
     "type": "git",
     "url": "https://github.com/Egorvah/vue-html5-editor-2"
   },
-  "main": "dist/vue-html5-editor.js",
+  "main": "dist/vue2-html5-editor.js",
   "scripts": {
     "build": "webpack --progress --hide-modules",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "vue",
-    "WYSIWYG",
-    "richtext",
-    "html5",
-    "editor"
+    "vue2",
+    "WYSIWYG"
   ],
   "author": "peak",
   "license": "Apache-2.0",
