@@ -6,7 +6,7 @@
 
 
 ```bash
-npm install vue2-html5-editor-2
+npm install vue2-html5-editor
 ```
 
 import and install as global component

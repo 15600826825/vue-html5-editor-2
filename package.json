@@ -1,6 +1,6 @@
 {
-  "name": "vue2-html5-editor-2",
-  "version": "0.6.1",
+  "name": "vue2-html5-editor",
+  "version": "0.6.0",
   "description": "A WYSIWYG text editor base on html5 and vue",
   "repository": {
     "type": "git",
