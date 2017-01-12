@@ -15,7 +15,7 @@ import and install as global component
 var Vue = require("vue")
 var editor = require("vue2-html5-editor")
 Vue.use(editor, {
-    name: 'vue-html5-editor'
+    name: 'vue2-html5-editor'
 });
 ```
 
